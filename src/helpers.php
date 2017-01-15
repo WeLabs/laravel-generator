@@ -96,7 +96,7 @@ if (!function_exists('get_template_file_path')) {
         if (file_exists($path)) {
             return $path;
         }
-        if ($templateName == 'laravel-generator')
+        if ($templateType == 'laravel-generator')
             return base_path('vendor/welabs/laravel-generator/templates/' . $templateName . '.stub');
         else
             return base_path('vendor/infyomlabs/' . $templateType . '/templates/' . $templateName . '.stub');
