@@ -69,7 +69,7 @@ if (!function_exists('infy_nl_tab')) {
      */
     function infy_nl_tab($lns = 1, $tabs = 1)
     {
-        return infy_nls($lns).infy_tabs($tabs);
+        return infy_nls($lns) . infy_tabs($tabs);
     }
 }
 
@@ -91,13 +91,15 @@ if (!function_exists('get_template_file_path')) {
             base_path('resources/infyom/infyom-generator-templates/')
         );
 
-        $path = $templatesPath.$templateName.'.stub';
+        $path = $templatesPath . $templateName . '.stub';
 
         if (file_exists($path)) {
             return $path;
         }
-
-        return base_path('vendor/infyomlabs/'.$templateType.'/templates/'.$templateName.'.stub');
+        if ($templateName == 'laravel-generator')
+            return base_path('vendor/welabs/laravel-generator/templates/' . $templateName . '.stub');
+        else
+            return base_path('vendor/infyomlabs/' . $templateType . '/templates/' . $templateName . '.stub');
     }
 }
 
@@ -122,7 +124,7 @@ if (!function_exists('fill_template')) {
     /**
      * fill template with variable values.
      *
-     * @param array  $variables
+     * @param array $variables
      * @param string $template
      *
      * @return string
@@ -141,8 +143,8 @@ if (!function_exists('fill_field_template')) {
     /**
      * fill field template with variable values.
      *
-     * @param array                                   $variables
-     * @param string                                  $template
+     * @param array $variables
+     * @param string $template
      * @param \InfyOm\Generator\Common\GeneratorField $field
      *
      * @return string
@@ -161,9 +163,9 @@ if (!function_exists('fill_template_with_field_data')) {
     /**
      * fill template with field data.
      *
-     * @param array                                   $variables
-     * @param array                                   $fieldVariables
-     * @param string                                  $template
+     * @param array $variables
+     * @param array $fieldVariables
+     * @param string $template
      * @param \InfyOm\Generator\Common\GeneratorField $field
      *
      * @return string
@@ -180,9 +182,9 @@ if (!function_exists('fill_template_with_field_data')) {
     /**
      * fill template with field data.
      *
-     * @param array                                   $variables
-     * @param array                                   $fieldVariables
-     * @param string                                  $template
+     * @param array $variables
+     * @param array $fieldVariables
+     * @param string $template
      * @param \InfyOm\Generator\Common\GeneratorField $field
      *
      * @return string
