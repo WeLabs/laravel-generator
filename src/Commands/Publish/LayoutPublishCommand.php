@@ -34,8 +34,8 @@ class LayoutPublishCommand extends PublishBaseCommand
 
     private function copyView()
     {
-        $viewsPath = config('infyom.laravel_generator.path.views', base_path('resources/views/'));
-        $templateType = config('infyom.laravel_generator.templates', 'core-templates');
+        $viewsPath = config('infyom_generator.path.views', base_path('resources/views/'));
+        $templateType = config('infyom_generator.templates', 'core-templates');
 
         $this->createDirectories($viewsPath);
 
@@ -76,7 +76,7 @@ class LayoutPublishCommand extends PublishBaseCommand
 
     private function updateRoutes()
     {
-        $path = config('infyom.laravel_generator.path.routes', app_path('routes/web.php'));
+        $path = config('infyom_generator.path.routes', app_path('routes/web.php'));
 
         $prompt = 'Existing routes web.php file detected. Should we add standard auth routes? (y|N) :';
         if (file_exists($path) && !$this->confirmOverwrite($path, $prompt)) {
@@ -99,7 +99,7 @@ class LayoutPublishCommand extends PublishBaseCommand
 
         $templateData = $this->fillTemplate($templateData);
 
-        $controllerPath = config('infyom.laravel_generator.path.controller', app_path('Http/Controllers/'));
+        $controllerPath = config('infyom_generator.path.controller', app_path('Http/Controllers/'));
 
         $fileName = 'HomeController.php';
 
@@ -123,12 +123,12 @@ class LayoutPublishCommand extends PublishBaseCommand
     {
         $templateData = str_replace(
             '$NAMESPACE_CONTROLLER$',
-            config('infyom.laravel_generator.namespace.controller'), $templateData
+            config('infyom_generator.namespace.controller'), $templateData
         );
 
         $templateData = str_replace(
             '$NAMESPACE_REQUEST$',
-            config('infyom.laravel_generator.namespace.request'), $templateData
+            config('infyom_generator.namespace.request'), $templateData
         );
 
         return $templateData;

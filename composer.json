@@ -18,10 +18,6 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Mitul Golakiya",
-            "email": "me@mitul.me"
-        },
-        {
             "name": "Wang Rui",
             "email": "wrmake@live.cn"
         }
@@ -38,7 +34,7 @@
     },
     "autoload": {
         "psr-4": {
-            "WeLabs\\Generator\\": "src/"
+            "InfyOm\\Generator\\": "src/"
         },
         "files": [
             "src/helpers.php"
