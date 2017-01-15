@@ -1,6 +1,6 @@
 {
-    "name": "infyomlabs/laravel-generator",
-    "description": "InfyOm Laravel Generator",
+    "name": "welabs/laravel-generator",
+    "description": "WeLabs Laravel Generator",
     "keywords": [
         "laravel",
         "api",
@@ -20,10 +20,14 @@
         {
             "name": "Mitul Golakiya",
             "email": "me@mitul.me"
+        },
+        {
+            "name": "Wang Rui",
+            "email": "wrmake@live.cn"
         }
     ],
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=7.1.0",
         "illuminate/support": "~5.0",
         "prettus/l5-repository": "~2.1",
         "laracasts/flash": "~2.0"
